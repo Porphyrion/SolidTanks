@@ -1,0 +1,26 @@
+# This is the name of the workflow, visible on GitHub UI.
+name: build_project
+on: push
+jobs:
+  build_project:
+    runs-on: ubuntu-18.04
+  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Get latest CMake and ninja
+        uses: lukka/get-cmake@latest
+
+      - name: Set up Clang
+        uses: egor-tensin/setup-clang@v1
+        with:
+            version: latest
+            platform: x64
+
+      - name: Build project
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build .
