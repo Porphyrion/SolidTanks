@@ -5,9 +5,13 @@ project(tank_battle)
 # enable_testing()
 # find_package(GTest REQUIRED)
 
+add_library(uobject UObject.cpp)
+
 add_executable(tank main.cpp)
 
-set_target_properties(tank  PROPERTIES 
-                        CXX_STANDARD 17
+target_link_libraries(tank uobject)
+
+set_target_properties(tank uobject PROPERTIES 
+                        CXX_STANDARD 20
                         CXX_STANDARD_REQUIRED ON)   
                         

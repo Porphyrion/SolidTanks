@@ -9,9 +9,10 @@ class UObject
 public:
     UObject();
     
-    void setProperties();
-    std::any getProperties();
+    void setProperty(std::string propertyName, std::any propertyValue);
+    std::any getProperty(std::string propertyName);
 
 private:
     std::map<std::string, std::any> _properties;
 };
+ 
