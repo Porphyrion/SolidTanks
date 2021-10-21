@@ -5,8 +5,7 @@ class IMovable
 public:
     IMovable();
     
-    void setCoordinates();
-    
+    virtual void setCoordinates() = 0;
     
 private:
 

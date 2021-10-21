@@ -3,8 +3,8 @@
 class ICommand
 {
 public:
-    ICommand();
-    ~ICommand();
+    ICommand() = default;
+    ~ICommand() = default;
 
     virtual void execute() = 0;
 };
