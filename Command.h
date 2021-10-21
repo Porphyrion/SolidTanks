@@ -1,7 +1,11 @@
+#pragma once
+
 class ICommand
 {
 public:
-    Commande()
+    ICommand();
+    ~ICommand();
 
     virtual void execute() = 0;
-}
+};
+
