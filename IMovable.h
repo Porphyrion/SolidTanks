@@ -3,10 +3,6 @@
 class IMovable
 {
 public:
-    IMovable();
-    
     virtual void setCoordinates() = 0;
-    
-private:
-
+    virtual void getCoordinates() = 0;
 };

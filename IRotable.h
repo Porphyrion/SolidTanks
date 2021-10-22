@@ -1,12 +1,6 @@
 class IRotable
 {
 public:
-    IRotable();
-    
-    virtual void getPosition();
-
-    virtual void setPostition();
-    
-private:
-    
+    virtual void getPosition() = 0;
+    virtual void setPostition() = 0;    
 };
