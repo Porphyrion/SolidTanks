@@ -5,13 +5,14 @@ project(tank_battle)
 # enable_testing()
 # find_package(GTest REQUIRED)
 
-add_library(uobject UObject.cpp)
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
-add_executable(tank main.cpp)
 
-target_link_libraries(tank uobject)
+add_executable(tank main.cpp UObject.cpp MovableAdapter.cpp MoveCommand.cpp) 
 
-set_target_properties(tank uobject PROPERTIES 
+target_link_libraries(tank  Eigen3::Eigen)
+
+set_target_properties(tank PROPERTIES 
                         CXX_STANDARD 20
                         CXX_STANDARD_REQUIRED ON)   
                         
