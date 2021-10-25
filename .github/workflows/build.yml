@@ -24,6 +24,11 @@ jobs:
 
       - name: Install GTest
         run: sudo apt-get install libgtest-dev
+        
+      - name: Install Eigen3
+        uses: kupns-aka-kupa/setup-eigen3@v1
+        env:
+          CMAKE_GENERATOR: ninja
 
       - name: Build project
         run: |
@@ -32,11 +37,6 @@ jobs:
           cmake ..
           cmake --build .
           
-      - name: Install Eigen3
-        uses: kupns-aka-kupa/setup-eigen3@v1
-        env:
-          CMAKE_GENERATOR: ninja
-
   # jobs_2:
   #    name: Create Release
   #    steps:
