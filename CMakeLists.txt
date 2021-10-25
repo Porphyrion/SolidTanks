@@ -8,7 +8,7 @@ project(tank_battle)
 find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
 
-add_executable(tank main.cpp UObject.cpp MovableAdapter.cpp MoveCommand.cpp) 
+add_executable(tank main.cpp UObject.cpp MovebleAdapter.cpp MoveCommand.cpp) 
 
 target_link_libraries(tank  Eigen3::Eigen)
 

@@ -5,11 +5,11 @@
 #include "IMovable.h"
 #include "UObject.h"
 
-class MovableAdapter : public IMovable
+class MovebleAdapter : public IMovable
 {
     public:
-        MovableAdapter(std::shared_ptr<UObject> movableObject);
-        ~MovableAdapter() = default;
+        MovebleAdapter(std::shared_ptr<UObject> movableObject);
+        ~MovebleAdapter() = default;
 
         void setCoordinates(const Eigen::VectorXf& newCoordinates) override;
         Eigen::VectorXf getCoordinates() override;
