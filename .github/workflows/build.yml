@@ -19,7 +19,7 @@ jobs:
             platform: x64
 
       - name: Install GTest
-        run: apt install libgtest-dev
+        run: sudo apt-get install libgtest-dev
 
       - name: Build project
         run: |
