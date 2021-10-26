@@ -22,9 +22,19 @@ jobs:
             version: 10
             platform: x64
 
-      - name: Install GTest And Eigen
-        run:  sudo apt install googletest libeigen3-dev
-
+      - name: Install Eigen
+        run:  sudo apt install libeigen3-dev
+      
+      - name: Install googletest
+        run: |
+          git clone https://github.com/google/googletest.git -b release-1.11.0
+          cd googletest        
+          mkdir build          
+          cd build
+          cmake .. 
+          make 
+          sudo make install
+          
       - name: Build project
         run: |
           mkdir build
