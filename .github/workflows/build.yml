@@ -22,13 +22,8 @@ jobs:
             version: 10
             platform: x64
 
-      - name: Install GTest
-        run: sudo apt-get install libgtest-dev
-        
-      - name: Install Eigen3
-        uses: kupns-aka-kupa/setup-eigen3@v1
-        env:
-          CMAKE_GENERATOR: ninja
+      - name: Install GTest And Eigen
+        run:  sudo apt install googletest libeigen3-dev
 
       - name: Build project
         run: |
