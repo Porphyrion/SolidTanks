@@ -11,9 +11,9 @@ class MovebleAdapter : public IMovable
         MovebleAdapter(std::shared_ptr<UObject> movableObject);
         ~MovebleAdapter() = default;
 
-        void setCoordinates(const Eigen::VectorXf& newCoordinates) override;
-        Eigen::VectorXf getCoordinates() override;
-        Eigen::VectorXf getVelocity() override;  
+        void setCoordinates(const Eigen::RowVector2i& newCoordinates) override;
+        Eigen::RowVector2i getCoordinates() override;
+        Eigen::RowVector2i getVelocity() override;  
         
     private:
         std::shared_ptr<UObject> _movableObject;

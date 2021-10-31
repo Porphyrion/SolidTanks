@@ -3,6 +3,7 @@
 
 UObject::UObject(){}
 
+
 void UObject::setProperty(std::string propertyName, std::any propertyValue)
 {
     _properties[propertyName] =  propertyValue;
