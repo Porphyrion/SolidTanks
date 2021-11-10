@@ -1,6 +1,6 @@
 ## Tanks 
 
-![build](https://github.com/Porphyrion/SolidTanks/actions/workflows/build_project.yml/badge.svg)
+![build](https://github.com/Porphyrion/SolidTanks/actions/workflows/build.yml/badge.svg)
 
 
 Dependency: 
