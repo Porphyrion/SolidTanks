@@ -2,10 +2,10 @@
 
 #include <memory>
 
-#include "Command.h"
+#include "ICommand.h"
 #include "IRotable.h"
 
-class RotateCommand : public  ICommand
+class RotateCommand : public ICommand
 {
     public: 
         RotateCommand(std::shared_ptr<IRotable> rotable);
@@ -14,4 +14,6 @@ class RotateCommand : public  ICommand
 
     private:
         std::shared_ptr<IRotable> _rotableObject;
+
+        const uint _maxDirection = 8;
 };

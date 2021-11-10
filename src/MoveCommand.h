@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "Command.h"
+#include "ICommand.h"
 #include "IMovable.h"
 
 

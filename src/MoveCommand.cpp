@@ -1,5 +1,7 @@
 #include "MoveCommand.h"
+
 #include <iostream>
+#include <exception>
 
 MoveCommand::MoveCommand(std::shared_ptr<IMovable> movebleObject) : _movebleObject(movebleObject)
 {}
@@ -7,6 +9,13 @@ MoveCommand::MoveCommand(std::shared_ptr<IMovable> movebleObject) : _movebleObje
 
 void MoveCommand::execute()
 {
-    _movebleObject->setCoordinates(_movebleObject->getCoordinates() + _movebleObject->getVelocity());
-}
+    try{
+        auto coordinates = _movebleObject->getCoordinates();
+        auto velocity =  _movebleObject->getVelocity();
+        _movebleObject->setCoordinates(coordinates + velocity);
+    }
+    catch(std::exception& e){
+        std::cerr <<e.what() << '\n';
+    }
+}   
    

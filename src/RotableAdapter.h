@@ -1,7 +1,6 @@
 #pragma once 
 
 #include <memory>
-#include <any>
 
 #include "UObject.h"
 #include "IRotable.h"
@@ -9,7 +8,9 @@
 class RotableAdapter : public IRotable
 {
     public: 
-        RotableAdapter(std::shared_ptr<UObject> movableObject);
+        using Ptr = std::shared_ptr<RotableAdapter>;
+
+        RotableAdapter(std::shared_ptr<UObject> rotableObject);
         ~RotableAdapter() = default;
 
         void setDirection(int derection) override;

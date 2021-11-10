@@ -10,7 +10,7 @@ void RotateCommand::execute()
     try{
         auto direction = _rotableObject->getDirection();
         auto angularVelocity = _rotableObject->getAngularVelocity();
-        _rotableObject->setDirection( direction +  angularVelocity);
+        _rotableObject->setDirection( (direction +  angularVelocity) % _maxDirection);
     }
     catch(std::exception& e)
     {

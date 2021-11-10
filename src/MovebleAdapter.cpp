@@ -1,8 +1,4 @@
-#include "MovebleAdapter.h"
-
-
-MovebleAdapter::MovebleAdapter() : _movableObject(std::make_shared<UObject>())
-{}
+#include "MovebleAdapter.h" 
 
 
 MovebleAdapter::MovebleAdapter(std::shared_ptr<UObject> movableObject) : _movableObject(movableObject)
@@ -17,13 +13,24 @@ void MovebleAdapter::setCoordinates(const Eigen::RowVector2i& newCoordinates)
 
 Eigen::RowVector2i MovebleAdapter::getCoordinates()
 {
-    auto result = std::any_cast<Eigen::RowVector2i>(_movableObject->getProperty("coordinates"));
-    return result;
+    try{
+        auto result = std::any_cast<Eigen::RowVector2i>(_movableObject->getProperty("coordinates"));
+        return result;
+    }
+    catch(const std::exception& e){
+        throw e;
+    }
+    
 }
 
 
 Eigen::RowVector2i MovebleAdapter::getVelocity()
 {
-    auto result = std::any_cast<Eigen::RowVector2i>(_movableObject->getProperty("velocity"));
-    return result;
+    try{
+        auto result = std::any_cast<Eigen::RowVector2i>(_movableObject->getProperty("velocity"));
+        return result;
+    }
+    catch(const std::exception& e){
+        throw e;
+    }
 }

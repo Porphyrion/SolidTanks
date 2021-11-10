@@ -1,5 +1,4 @@
 #include "RotableAdapter.h"
-#include <iostream>
 
 RotableAdapter::RotableAdapter(std::shared_ptr<UObject> rotable) : _rotableObject(rotable)
 {}

@@ -8,7 +8,8 @@
 class MovebleAdapter : public IMovable
 {
     public:
-        MovebleAdapter();
+        using Ptr = std::shared_ptr<MovebleAdapter>;
+
         MovebleAdapter(std::shared_ptr<UObject> movableObject);
         ~MovebleAdapter() = default;
 
