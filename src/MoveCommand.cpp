@@ -15,7 +15,7 @@ void MoveCommand::execute()
         _movebleObject->setCoordinates(coordinates + velocity);
     }
     catch(std::exception& e){
-        std::cerr <<e.what() << '\n';
+        std::cerr << "Move command has catched error: " <<e.what() << '\n';
     }
 }   
    

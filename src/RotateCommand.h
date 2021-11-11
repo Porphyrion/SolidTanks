@@ -15,5 +15,5 @@ class RotateCommand : public ICommand
     private:
         std::shared_ptr<IRotable> _rotableObject;
 
-        const uint _maxDirection = 8;
+        static const uint _maxDirection = 8;
 };

@@ -14,6 +14,6 @@ void RotateCommand::execute()
     }
     catch(std::exception& e)
     {
-         std::cerr << e.what() << '\n';
+         std::cerr << "Rotate command has catched error: " << e.what() << '\n';
     }
 }
