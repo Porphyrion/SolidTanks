@@ -87,7 +87,7 @@ TEST_F(UObjectTest, Move)
     EXPECT_ANY_THROW(movebleTankThree->getCoordinates());
    
     EXPECT_EQ(newCoordinatesOne, testCoordinates);
-    EXPECT_NE(newCoordinatesTwo, testCoordinates);
+    EXPECT_EQ(newCoordinatesTwo, testCoordinates);
 }
 
 
@@ -113,5 +113,5 @@ TEST_F(UObjectTest, Rotate)
     EXPECT_ANY_THROW(rotableTankThree->getDirection());
    
     EXPECT_EQ(newDirectionFour, testDirection);
-    EXPECT_NE(newDirectionFive, testDirection);
+    EXPECT_EQ(newDirectionFive, testDirection);
 }
