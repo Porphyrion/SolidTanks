@@ -7,3 +7,4 @@ Dependency:
 
 * GTest
 * Eigen3  
+* ninja for build
