@@ -2,23 +2,24 @@ cmake_minimum_required(VERSION 3.16)
 set(CMAKE_GENERATOR ninja)
 project(tank_battle) 
 
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
+
 enable_testing()
 find_package(GTest REQUIRED)
-
-find_package(Eigen3 3.3 REQUIRED NO_MODULE)
 
 set(SOURCE
    ${SOURCE}
    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 
 add_library(UObjectLib ./src/UObject.cpp ./src/MoveCommand.cpp ./src/MovebleAdapter.cpp ./src/RotateCommand.cpp ./src/RotableAdapter.cpp)
-target_link_libraries(UObjectLib Eigen3::Eigen)
+target_link_libraries(UObjectLib eigen)
 
 add_executable(tanks ./src/main.cpp) 
 target_link_libraries(tanks UObjectLib )
 
 add_executable(uobject_tests tests/tests.cpp )
-target_link_libraries(uobject_tests UObjectLib GTest::GTest GTest::Main Eigen3::Eigen)
+target_link_libraries(uobject_tests UObjectLib GTest::GTest GTest::Main eigen)
 gtest_discover_tests(uobject_tests)
 
 
