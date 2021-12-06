@@ -26,8 +26,8 @@ jobs:
       - name: Create conan profile
         run: |
           conan profile new default --detect
-          conan profile update options.compiler=clang default 
-          conan profile update options.compiler.version=10 default 
+          conan profile update settings.compiler=clang default 
+          conan profile update settings.compiler.version=10 default 
           conan profile update env.CC=/usr/bin/clang default 
           conan profile update env.CXX=/usr/bin/clnag++ default 
 
