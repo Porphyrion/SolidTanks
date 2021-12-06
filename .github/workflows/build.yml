@@ -19,9 +19,6 @@ jobs:
         with:
             version: 10
             platform: x64
-
-      # - name: Install Eigen
-      #  run:  sudo apt install libeigen3-dev
         
       - name: Install Conan
         uses: turtlebrowser/get-conan@main
@@ -29,10 +26,10 @@ jobs:
       - name: Create conan profile
         run: |
           conan profile new default --detect
-          conan profile update default options.compiler=Clang
-          conan profile update default options.compiler.version=10
-          conan profile update default env.CC=/usr/bin/clang
-          conan profile update default env.CXX=/usr/bin/clnag++
+          conan profile update options.compiler=Clang default 
+          conan profile update options.compiler.version=10 default 
+          conan profile update env.CC=/usr/bin/clang default 
+          conan profile update env.CXX=/usr/bin/clnag++ default 
 
       - name: Install googletest
         run: |
