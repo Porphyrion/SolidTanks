@@ -20,9 +20,12 @@ jobs:
             version: 10
             platform: x64
 
-      - name: Install Eigen
-        run:  sudo apt install libeigen3-dev
+      # - name: Install Eigen
+      #  run:  sudo apt install libeigen3-dev
         
+      - name: Install Conan
+        uses: turtlebrowser/get-conan@main
+
       - name: Install googletest
         run: |
           git clone https://github.com/google/googletest.git 
@@ -37,6 +40,7 @@ jobs:
         run: |
           mkdir build
           cd build
+          conan install ..
           cmake ..
           cmake --build .
 
