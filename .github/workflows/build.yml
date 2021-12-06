@@ -26,6 +26,14 @@ jobs:
       - name: Install Conan
         uses: turtlebrowser/get-conan@main
 
+      - name: Create conan profile
+        run: |
+          conan profile new default --detect
+          conan profile update options.compiler=Clang
+          conan profile update options.compiler.version=10
+          conan profile update env.CC=/usr/bin/clang
+          conan profile update env.CXX=/usr/bin/clnag++
+
       - name: Install googletest
         run: |
           git clone https://github.com/google/googletest.git 
