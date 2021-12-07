@@ -51,6 +51,5 @@ jobs:
 
       - name: Run tests
         run: |
-          cd build
-          ls -la
+          cd build/bin
           ./uobject_tests
