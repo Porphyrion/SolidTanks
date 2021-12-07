@@ -13,13 +13,13 @@ set(SOURCE
    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
 
 add_library(UObjectLib ./src/UObject.cpp ./src/MoveCommand.cpp ./src/MovebleAdapter.cpp ./src/RotateCommand.cpp ./src/RotableAdapter.cpp)
-target_link_libraries(UObjectLib eigen)
+target_link_libraries(UObjectLib ${CONAN_LIBS})
 
 add_executable(tanks ./src/main.cpp) 
 target_link_libraries(tanks UObjectLib )
 
 add_executable(uobject_tests tests/tests.cpp )
-target_link_libraries(uobject_tests UObjectLib GTest::GTest GTest::Main eigen)
+target_link_libraries(uobject_tests UObjectLib GTest::GTest GTest::Main ${CONAN_LIBS})
 gtest_discover_tests(uobject_tests)
 
 
