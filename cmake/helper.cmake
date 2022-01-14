@@ -1,0 +1,5 @@
+function(find_src target path_to_src)
+    file(GLOB SOURCES "${CMAKE_SOURCE_DIR}/${path_to_src}/*.cpp")
+    set(${target}_SOURCES ${SOURCES} PARENT_SCOPE)
+    # message(${${target}_SOURCES})
+endfunction()

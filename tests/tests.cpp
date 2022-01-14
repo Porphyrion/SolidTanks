@@ -60,7 +60,6 @@ class UObjectTest : public  ::testing::Test
 
 
 
-
 TEST_F(UObjectTest, Move)
 {
     auto testCoordinates = Eigen::RowVector2i(); 
@@ -71,9 +70,9 @@ TEST_F(UObjectTest, Move)
     auto movebleTankTwo = std::make_shared<MovebleAdapter>(tankTwo);
     auto movebleTankThree = std::make_shared<MovebleAdapter>(tankThree);
 
-    auto commandMoveOne = std::make_shared<MoveCommand>(movebleTankOne);
-    auto commandMoveTwo = std::make_shared<MoveCommand>(movebleTankTwo);
-    auto commandMoveThree = std::make_shared<MoveCommand>(movebleTankThree);
+    auto commandMoveOne = std::make_shared<MoveCommand>(movebleTankOne.get());
+    auto commandMoveTwo = std::make_shared<MoveCommand>(movebleTankTwo.get());
+    auto commandMoveThree = std::make_shared<MoveCommand>(movebleTankThree.get());
 
 
     commandMoveOne->execute();
