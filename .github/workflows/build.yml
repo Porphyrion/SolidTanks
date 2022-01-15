@@ -52,5 +52,5 @@ jobs:
 
       - name: Run tests
         run: |
-          cd build/
-          ./tests
+          cd build/tests
+          ./CommandTest
