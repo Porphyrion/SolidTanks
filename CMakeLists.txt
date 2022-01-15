@@ -7,7 +7,7 @@ include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/helper.cmake)
 
 find_package(Boost REQUIRED)
-find_package (Eigen3 3.3 REQUIRED NO_MODULE)    
+find_package(Eigen3 3.3 REQUIRED NO_MODULE)    
 
 include_directories(${Boost_INCLUDE_DIR})
 

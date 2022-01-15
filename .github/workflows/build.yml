@@ -50,6 +50,7 @@ jobs:
           ls -la
           cmake ..
           cmake --build .
+          nano /home/runner/work/SolidTanks/SolidTanks/build/CMakeFiles/CMakeOutput.log
 
       - name: Run tests
         run: |
