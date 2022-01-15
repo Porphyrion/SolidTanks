@@ -4,10 +4,11 @@ set(CMAKE_GENERATOR ninja)
 project(tank_battle) 
 
 include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+message(${CMAKE_BINARY_DIR})
 include(${CMAKE_SOURCE_DIR}/cmake/helper.cmake)
 
 find_package(Boost REQUIRED)
-find_package(Eigen3 3.3 REQUIRED NO_MODULE)    
+find_package(Eigen3 3.3 REQUIRED)    
 
 include_directories(${Boost_INCLUDE_DIR})
 
