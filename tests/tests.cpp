@@ -14,7 +14,7 @@ class IMoveble;
 class IRotable;
 
 
-class UObjectTest : public  ::testing::Test
+class CommandTests : public  ::testing::Test
 {
     protected:
         void SetUp() override
@@ -60,7 +60,7 @@ class UObjectTest : public  ::testing::Test
 
 
 
-TEST_F(UObjectTest, Move)
+TEST_F(CommandTests, Move)
 {
     auto testCoordinates = Eigen::RowVector2i(); 
     testCoordinates(0) = 5;
@@ -81,16 +81,15 @@ TEST_F(UObjectTest, Move)
 
     auto newCoordinatesOne = movebleTankOne->getCoordinates();
     auto newCoordinatesTwo = movebleTankTwo->getCoordinates();
-
-   
+  
     EXPECT_ANY_THROW(movebleTankThree->getCoordinates());
    
     EXPECT_EQ(newCoordinatesOne, testCoordinates);
-    EXPECT_EQ(newCoordinatesTwo, testCoordinates);
+    EXPECT_NE(newCoordinatesTwo, testCoordinates);
 }
 
 
-TEST_F(UObjectTest, Rotate)
+TEST_F(CommandTests, Rotate)
 {
     auto testDirection = 5;
 
@@ -112,5 +111,5 @@ TEST_F(UObjectTest, Rotate)
     EXPECT_ANY_THROW(rotableTankThree->getDirection());
    
     EXPECT_EQ(newDirectionFour, testDirection);
-    EXPECT_EQ(newDirectionFive, testDirection);
+    EXPECT_NE(newDirectionFive, testDirection);
 }

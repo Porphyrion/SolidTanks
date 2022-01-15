@@ -27,21 +27,3 @@ TEST(Movable, Test){
     EXPECT_ANY_THROW(cmd.execute());   
 }
 
-
-TEST(Rotable, Test){
-
-    using ::testing::Mock;
-
-    auto  movable = std::make_shared<MockMovable>(); 
-    Eigen::RowVector2i x{1, 1};
-
-    EXPECT_CALL(*movable, getCoordinates())
-            .WillOnce(Return(x));
-
-    EXPECT_CALL(*movable, getVelocity())
-            .WillOnce(Throw(new std::exception{}));
-
-    MoveCommand cmd(movable);
- 
-    EXPECT_ANY_THROW(cmd.execute());   
-}
