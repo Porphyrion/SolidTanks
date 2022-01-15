@@ -1,8 +1,8 @@
 # This is the name of the workflow, visible on GitHub UI.
 name: build_and_test
 on: push
-   # branches:
-   #    - master
+   branches:
+     - master
 
 jobs:
   Build-And-Test:
@@ -52,4 +52,4 @@ jobs:
       - name: Run tests
         run: |
           cd build/bin
-          ./uobject_tests
+          ./CommandTest
