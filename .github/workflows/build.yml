@@ -1,11 +1,12 @@
 # This is the name of the workflow, visible on GitHub UI.
 name: build_and_test
-on: push
-  branches:
-    - master
+on: 
+  push:
+    branches:
+      - master
 
 jobs:
-  Build-And-Test:
+  Build-And-Test: 
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
